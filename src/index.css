@@ -6,3 +6,8 @@
 body {
     background-color: #F4F4F5;
 }
+
+/* Remove body background in dark mode to allow Tailwind classes to work */
+body.dark {
+    background-color: initial;
+}
