@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import fullLogo from "../public/full_logo.png";
 import { Link } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { HiMoon, HiOutlineSun  } from "react-icons/hi2";
 import { pageUtils } from "../utils/pages";
 import { useTheme } from "../context/ThemeContext";
 
@@ -23,7 +24,7 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md py-4 relative z-50 border-b border-gray-200 dark:border-gray-800 transition-colors">
+    <nav className="bg-[#e6f1f0] dark:bg-blue-100 shadow-md py-4 relative z-50 border-b border-gray-200 dark:border-gray-800 transition-colors">
       <div className="max-w-[80%] mx-auto flex justify-between items-center">
         <Link to="/">
           <img className="h-14" src={fullLogo} alt="Logo" />
@@ -31,14 +32,14 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition"
+            className="transition"
             aria-label="Toggle dark mode"
           >
-            {theme === "dark" ? "🌙" : "☀️"}
+            {theme === "dark" ? <HiMoon className="w-5 h-5" /> : <HiOutlineSun className="w-5 h-5" />}
           </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`${menuOpen ? "text-emerald-600 hover:text-white" : "text-gray-800 hover:text-emerald-600 dark:text-gray-200 dark:hover:text-emerald-400"} text-3xl p-2 transition duration-300 z-50 relative`}
+            className={`${menuOpen ? "text-blue-100 dark:text-emerald-600 hover:text-white" : "text-gray-800 hover:text-emerald-600 dark:text-gray-200 dark:hover:text-emerald-400"} text-3xl p-2 transition duration-300 z-50 relative`}
             aria-label="Toggle menu"
           >
             {menuOpen ? <IoClose /> : <IoMenu />}
@@ -48,7 +49,7 @@ const Navbar = () => {
 
       {isVisible && (
         <div
-          className={`fixed top-0 right-0 w-1/4 min-w-[240px] bg-white dark:bg-gray-900 z-30 shadow-lg border-l border-gray-200 dark:border-gray-800 transition-all duration-300 ease-in-out px-6 pt-32 pb-16 rounded-bl-xl
+          className={`fixed top-0 right-0 w-1/4 min-w-[240px] bg-asparagus-700 dark:bg-brunswick z-30 shadow-lg border-l border-gray-200 dark:border-gray-800 transition-all duration-300 ease-in-out px-6 pt-32 pb-16 rounded-bl-xl
             ${animateOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}
           `}
         >
