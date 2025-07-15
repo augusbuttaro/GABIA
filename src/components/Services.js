@@ -6,9 +6,9 @@ import servicio from '../public/servicio.jpg'
 
 const services = [
   { name: "Capacitaciones prácticas y teóricas", color: "border-teal-400", img: capacitacion },
-  { name: "Trabajo en equipo", color: "border-blue-400", img: servicio },
-  { name: "Estrategia", color: "border-orange-400", img: programas },
-  { name: "Planificación", color: "border-green-400",  img: risk },
+  { name: "Soporte técnico y legal", color: "border-blue-400", img: servicio },
+  { name: "Confección de programas de higiene y salud ocupacional", color: "border-orange-400", img: programas },
+  { name: "Evaluaciones integrales de riesgos", color: "border-green-400",  img: risk },
 ];
 
 // Move circles closer to the center
@@ -25,8 +25,8 @@ const Services = () => {
       {/* Stripes background */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <div className="absolute left-0 top-0 w-full h-full" style={{ zIndex: 0 }}>
-          <div className="absolute right-0 w-[180vw] h-32 bg-blue-900/10" style={{ top: '40%', transform: 'rotate(30deg)' }}></div>
-          <div className="absolute right-0 w-[180vw] h-32 bg-blue-900/10" style={{ top: '70%', transform: 'rotate(30deg)' }}></div>
+          <div className="absolute right-0 w-[180vw] h-32 bg-blue-100/10 dark:bg-blue-900/10" style={{ top: '40%', transform: 'rotate(30deg)' }}></div>
+          <div className="absolute right-0 w-[180vw] h-32 bg-blue-100/10 dark:bg-blue-900/10" style={{ top: '70%', transform: 'rotate(30deg)' }}></div>
         </div>
       </div>
       <h1 className='text-3xl font-bold mb-8 border-b-4 border-brunswick-600 z-10'>Servicios</h1>
