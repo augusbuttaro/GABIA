@@ -1,7 +1,11 @@
-const Contact = () => {
-    return(
-        <div>Contact</div>
-    )
-}
+import ContactForm from "../components/Contact";
 
-export default Contact
+const Contact = () => {
+    return (
+        <div className="w-full">
+            <ContactForm />
+        </div>
+    );
+};
+
+export default Contact;
