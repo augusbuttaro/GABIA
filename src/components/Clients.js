@@ -1,24 +1,35 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import Apple from '../public/apple.png';
-import Chipotle from '../public/chipotle.png';
-import CocaCola from '../public/coca-cola.png';
-import Volkswagen from '../public/volkswagen.png';
-import Nike from '../public/nike.png';
+import ypf from '../public/ypf.png';
+import ISL from '../public/instrumental-san-lorenzo.png';
+import Azilut from '../public/Azilut.png';
+import buenAgro from '../public/buen-agro.png';
+import fedPat from '../public/fedpat.png';
+import magnesita from '../public/magnesita.png';
+import molino from '../public/molino.png';
+import nidera from '../public/nidera.png';
+import novobra from '../public/novobra.png';
+import poderJudicial from '../public/poder-judicial.png';
 
 const Clients = () => {
   const clients = useMemo(
     () => [
-      { id: 1, name: 'Apple', logo: Apple },
-      { id: 2, name: 'Chipotle', logo: Chipotle },
-      { id: 3, name: 'Coca Cola', logo: CocaCola },
-      { id: 4, name: 'Volkswagen', logo: Volkswagen },
-      { id: 5, name: 'Nike', logo: Nike },
+      { id: 1, name: 'YPF', logo: ypf },
+      { id: 2, name: 'ISL', logo: ISL },
+      { id: 3, name: 'Azilut', logo: Azilut },
+      { id: 4, name: 'Buen Agro', logo: buenAgro },
+      { id: 5, name: 'Federacion Patronal', logo: fedPat },
+      { id: 6, name: 'Magnesita', logo: magnesita },
+      { id: 7, name: 'Molino', logo: molino },
+      { id: 8, name: 'Nidera', logo: nidera },
+      { id: 9, name: 'Novobra', logo: novobra },
+      { id: 10, name: 'Poder Judicial', logo: poderJudicial },
     ],
     []
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [lastClickTime, setLastClickTime] = useState(0);
 
   useEffect(() => {
     if (clients.length <= 1) return;
@@ -35,7 +46,7 @@ const Clients = () => {
     }, 3000);
 
     return () => clearInterval(timer);
-  }, [clients.length]);
+  }, [clients.length, lastClickTime]);
 
   if (clients.length === 0) return null;
 
@@ -56,13 +67,26 @@ const Clients = () => {
           <div className="flex items-center justify-center gap-8 md:gap-14 py-6">
             {visibleClients.map((client, idx) => {
               const isActive = idx === 1;
+              const isPrev = idx === 0;
+              const isNext = idx === 2;
+
+              const handleClick = () => {
+                if (isPrev) {
+                  setActiveIndex((prev) => (prev - 1 + clients.length) % clients.length);
+                } else if (isNext) {
+                  setActiveIndex((next) => (next + 1) % clients.length);
+                }
+                setLastClickTime(Date.now());
+              };
 
               return (
                 <div
                   key={client.id}
+                  onClick={handleClick}
                   className={[
                     'flex items-center justify-center transition-all duration-500 ease-out',
                     'motion-reduce:transition-none',
+                    !isActive && 'cursor-pointer hover:scale-110',
                     isActive
                       ? 'opacity-100 scale-125'
                       : 'opacity-50 scale-95',

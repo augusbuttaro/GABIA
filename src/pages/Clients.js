@@ -1,9 +1,12 @@
-import ClientsCarousel from "../components/Clients";
+import ClientsGrid from "../components/ClientsGrid";
+
 
 const Clients = () => {
     return (
-        <div className="w-full">
-            <ClientsCarousel />
+        <div className="w-full relative overflow-hidden">
+            <div className="relative z-10">
+                <ClientsGrid />
+            </div>
         </div>
     );
 };
