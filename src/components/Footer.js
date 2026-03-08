@@ -9,7 +9,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <div>
-                        <a className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+                        <a className="flex items-center gap-2" href="/" target="_blank" rel="noopener noreferrer">
                             <FaInstagram className="text-xl hover:text-gray-400 transition-colors" />
                             <p>gabia.seh</p>
                         </a>
