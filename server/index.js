@@ -25,7 +25,7 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
 });
 
-// Contact form route
+// Contact form route asasa
 app.use("/api", contactRoutes);
 
 app.listen(PORT, () => {
