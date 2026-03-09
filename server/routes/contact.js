@@ -56,7 +56,7 @@ router.post("/contact", async (req, res) => {
     const safePhone = typeof phone === "string" ? phone.trim() : "-";
 
     await resend.emails.send({
-      from: process.env.MAIL_FROM,
+      from: "Website <onboarding@resend.dev>",
       to: [process.env.MAIL_TO],
       reply_to: email,
       subject: `Contacto Web: ${subject}`,
