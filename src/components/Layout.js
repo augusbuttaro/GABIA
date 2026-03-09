@@ -8,6 +8,8 @@ const Layout = () => {
       
       {/* Fondo diagonal 
       <DiagonalBackground />
+
+      asda
         */}
 
       {/* Contenido */}
